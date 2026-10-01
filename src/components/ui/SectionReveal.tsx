@@ -17,21 +17,21 @@ export function SectionReveal({
   direction = "up",
 }: SectionRevealProps) {
   const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
+    up: { y: 20, x: 0 },
+    down: { y: -20, x: 0 },
+    left: { x: 20, y: 0 },
+    right: { x: -20, y: 0 },
   };
 
   return (
     <motion.div
       initial={{ opacity: 0, ...directions[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "0px 0px -40px 0px" }}
       transition={{
-        duration: 0.8,
-        delay: delay,
-        ease: [0.16, 1, 0.3, 1], // Custom spring-like easing
+        duration: 0.35,
+        delay: Math.min(delay, 0.2),
+        ease: [0.16, 1, 0.3, 1],
       }}
       className={className}
     >

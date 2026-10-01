@@ -9,48 +9,35 @@ export default function JoinPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const formData = new FormData(e.target as HTMLFormElement);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_JOIN_KEY || "");
-    formData.append("subject", "New Team Application from Website");
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    object.access_key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "d0302f54-509a-4b85-8a3b-231d92ede2a7";
+    object.subject = "New Team Application - " + (formData.get("name") || "Student");
+    object.from_name = "IoT Club VIT Pune Website";
 
     try {
-      // 1. Send email notification via Web3Forms
-      const emailPromise = fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(object),
       });
 
-      // 2. Send data to Google Sheets via Apps Script Web App
-      const sheetUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_JOIN_URL;
-      const sheetParams = new URLSearchParams();
-      formData.forEach((value, key) => {
-        if (key !== "access_key" && key !== "subject" && key !== "botcheck") {
-          sheetParams.append(key, value.toString());
-        }
-      });
-
-      const sheetPromise = sheetUrl
-        ? fetch(sheetUrl, {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: sheetParams.toString(),
-          }).catch((err) => {
-            console.error("Sheet Error:", err);
-          })
-        : Promise.resolve();
-
-      await Promise.all([emailPromise, sheetPromise]);
-      
-      setIsSubmitted(true);
-    } catch (error) {
-      alert("Error submitting form. Please try again.");
+      const data = await response.json();
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        alert(data.message || "Submission failed. Please try again.");
+      }
+    } catch {
+      alert("Error submitting form. Please check your network connection and try again.");
     } finally {
       setIsSubmitting(false);
     }

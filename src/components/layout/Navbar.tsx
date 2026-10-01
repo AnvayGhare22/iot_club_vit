@@ -42,7 +42,7 @@ export function Navbar() {
         <div className="absolute top-0 inset-x-0 h-[2.5px] bg-logo-spectrum" />
 
         <div className="container mx-auto px-4 md:px-8 h-full flex items-center justify-between">
-          <Link href="/" className="group relative z-50 flex items-center gap-3">
+          <Link href="/" prefetch={true} className="group relative z-50 flex items-center gap-3">
             <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-105">
               <Image 
                 src="/iot_club_logo.png" 
@@ -70,6 +70,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
+                prefetch={true}
                 className="group flex flex-col relative"
               >
                 <span className={cn(
@@ -86,12 +87,14 @@ export function Navbar() {
           <div className="flex items-center gap-4 z-50">
             <Link
               href="/join"
+              prefetch={true}
               className="hidden lg:inline-flex items-center justify-center h-10 px-6 font-sans text-sm font-semibold tracking-wide border border-[var(--color-ink)]/20 text-[var(--color-ink)] active-scale hover:border-[var(--color-ink)] transition-colors rounded"
             >
               Join Team
             </Link>
             <Link
               href="/partner"
+              prefetch={true}
               className="hidden md:inline-flex items-center justify-center h-10 px-6 font-sans text-sm font-semibold tracking-wide bg-[var(--color-accent-blue)] text-[var(--color-surface)] active-scale hover:opacity-90 transition-opacity rounded"
             >
               Partner With Us
@@ -128,6 +131,7 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
+                  prefetch={true}
                   className="flex items-baseline gap-4 border-b border-[var(--color-ink)]/10 pb-4"
                 >
                   <span className="font-display font-semibold text-2xl text-[var(--color-ink)]">
@@ -139,12 +143,14 @@ export function Navbar() {
             <div className="mt-auto pt-6 flex flex-col gap-3">
               <Link
                 href="/join"
+                prefetch={true}
                 className="flex items-center justify-center w-full h-12 font-sans text-sm font-semibold tracking-wide border border-[var(--color-ink)]/20 text-[var(--color-ink)] active-scale rounded"
               >
                 Join Our Team
               </Link>
               <Link
                 href="/partner"
+                prefetch={true}
                 className="flex items-center justify-center w-full h-12 font-sans text-sm font-semibold tracking-wide bg-[var(--color-accent-blue)] text-[var(--color-surface)] active-scale rounded"
               >
                 Partner With Us

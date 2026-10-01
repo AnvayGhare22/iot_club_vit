@@ -135,43 +135,47 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom Bar with Copyright and Direct Socials */}
-        <div className="mt-20 pt-8 border-t border-[var(--color-surface)]/10 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-[var(--color-muted)]">
+        {/* Bottom Bar with Copyright and Social Icons */}
+        <div className="mt-20 pt-8 border-t border-[var(--color-surface)]/10 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs text-[var(--color-muted)]">
           <div className="tracking-widest uppercase text-center md:text-left">
             © 2026 IOT CLUB VIT PUNE. ALL RIGHTS RESERVED.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <a
-              href={SOCIAL_LINKS.linkedin.href}
+              href="https://in.linkedin.com/company/iot-club-viit-pune"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#0A66C2] transition-colors"
+              aria-label="IoT Club on LinkedIn"
+              className="w-10 h-10 rounded-full border border-[var(--color-surface)]/15 bg-[var(--color-surface)]/5 text-[var(--color-muted)] flex items-center justify-center hover:text-[#0A66C2] hover:border-[#0A66C2]/60 hover:bg-[#0A66C2]/10 hover:scale-110 transition-all duration-200"
             >
-              LinkedIn
+              <i className="fab fa-linkedin text-base"></i>
             </a>
             <a
-              href={SOCIAL_LINKS.instagram.href}
+              href="https://x.com/vit_college?lang=en"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#E1306C] transition-colors"
+              aria-label="VIT College on X (Twitter)"
+              className="w-10 h-10 rounded-full border border-[var(--color-surface)]/15 bg-[var(--color-surface)]/5 text-[var(--color-muted)] flex items-center justify-center hover:text-white hover:border-white/60 hover:bg-white/10 hover:scale-110 transition-all duration-200"
             >
-              Instagram
+              <i className="fab fa-twitter text-base"></i>
             </a>
             <a
-              href={SOCIAL_LINKS.x.href}
+              href="https://www.instagram.com/iot_club_vit/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              aria-label="IoT Club on Instagram"
+              className="w-10 h-10 rounded-full border border-[var(--color-surface)]/15 bg-[var(--color-surface)]/5 text-[var(--color-muted)] flex items-center justify-center hover:text-[#E1306C] hover:border-[#E1306C]/60 hover:bg-[#E1306C]/10 hover:scale-110 transition-all duration-200"
             >
-              X (Twitter)
+              <i className="fab fa-instagram text-base"></i>
             </a>
             <a
-              href={SOCIAL_LINKS.whatsapp.href}
+              href="https://chat.whatsapp.com/EJDVaeuGSKGBLHhyZgpO3z"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#25D366] transition-colors"
+              aria-label="Join IoT Club WhatsApp Community"
+              className="w-10 h-10 rounded-full border border-[var(--color-surface)]/15 bg-[var(--color-surface)]/5 text-[var(--color-muted)] flex items-center justify-center hover:text-[#25D366] hover:border-[#25D366]/60 hover:bg-[#25D366]/10 hover:scale-110 transition-all duration-200"
             >
-              WhatsApp
+              <i className="fab fa-whatsapp text-base"></i>
             </a>
           </div>
         </div>

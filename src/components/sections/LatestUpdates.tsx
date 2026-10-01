@@ -11,7 +11,7 @@ export function LatestUpdates() {
       category: "Competition",
       title: "Shark Tank IoT - XEN 4.0",
       description: "IOT Club organized Shark Tank IoT in collaboration with I2IOC, featuring industry experts Ashwin Kshirasagar and Shreyash Rane as judges. First-year students pitched innovative IoT solutions.",
-      link: "/blogs",
+      link: "/blog/shark-tank-iot-xen-4",
       image: "/images/updates/shark-tank.jpeg",
     },
     {
@@ -20,7 +20,7 @@ export function LatestUpdates() {
       category: "Career Development",
       title: "Resume Building Session",
       description: "Career Coach Mr. Dheeraj Rathod guided students on creating industry-ready resumes for internships and placements, sharing actionable insights on skill representation and profile optimization.",
-      link: "/blogs",
+      link: "/blog/resume-building-session",
       image: "/images/updates/resume.jpeg",
     },
     {
@@ -29,7 +29,7 @@ export function LatestUpdates() {
       category: "Club Activities",
       title: "First Year Orientation 2024",
       description: "Welcomed the new batch with an engaging orientation introducing our technical domains, leadership opportunities, and hands-on learning culture to spark innovation among first-year students.",
-      link: "/blogs",
+      link: "/blog/first-year-orientation-2024",
       image: "/images/updates/orientation.jpeg",
     },
     {
@@ -38,7 +38,7 @@ export function LatestUpdates() {
       category: "Workshop",
       title: "XEN 4.0 Hardware Workshop",
       description: "Hands-on technical session for first-years featuring Arduino, NodeMCU, and Raspberry Pi. Students learned sensor integration, programming, and embedded system fundamentals.",
-      link: "/blogs",
+      link: "/blog/xen-4-hardware-workshop",
       image: "/images/updates/workshop.jpeg",
     },
     {
@@ -47,7 +47,7 @@ export function LatestUpdates() {
       category: "Guest Lecture",
       title: "IAF Expert Session - XEN 4.0",
       description: "Prabhaker S. from the Indian Air Force guided students on engineering aptitude, problem-solving, and real-world IoT applications in defense and industrial sectors.",
-      link: "/blogs",
+      link: "/blog/iaf-expert-session-xen-4",
       image: "/images/updates/expert-session.jpeg",
     },
     {
@@ -56,7 +56,7 @@ export function LatestUpdates() {
       category: "Projects",
       title: "Member Projects Showcase",
       description: "Our members are working on cutting-edge projects including smart home automation, health monitoring systems, agricultural IoT solutions, and AI-powered robotics.",
-      link: "/projects",
+      link: "/blog/member-projects-showcase",
       image: "/images/updates/showcase.jpg",
     }
   ];
@@ -80,7 +80,7 @@ export function LatestUpdates() {
             </SectionReveal>
           </div>
           <SectionReveal>
-            <Link href="/events" className="font-mono text-sm tracking-widest uppercase border-b-2 border-[var(--color-ink)] pb-1 hover:text-[var(--color-accent-blue)] hover:border-[var(--color-accent-blue)] transition-colors">
+            <Link href="/events" prefetch={true} className="font-mono text-sm tracking-widest uppercase border-b-2 border-[var(--color-ink)] pb-1 hover:text-[var(--color-accent-blue)] hover:border-[var(--color-accent-blue)] transition-colors">
               View All Updates →
             </Link>
           </SectionReveal>
@@ -88,10 +88,10 @@ export function LatestUpdates() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {updates.map((update, i) => (
-            <SectionReveal key={update.title} delay={i * 0.1}>
+            <SectionReveal key={update.title} delay={i * 0.05}>
               <div className="group h-full flex flex-col border border-[var(--color-ink)]/10 bg-[var(--color-surface-alt)] hover:border-[var(--color-accent-blue)] transition-colors">
                 
-                <div className="w-full aspect-video bg-[var(--color-surface)] relative overflow-hidden flex items-center justify-center border-b border-[var(--color-ink)]/10">
+                <Link href={update.link} prefetch={true} className="block w-full aspect-video bg-[var(--color-surface)] relative overflow-hidden flex items-center justify-center border-b border-[var(--color-ink)]/10">
                   <Image
                     src={update.image}
                     alt={update.title}
@@ -102,7 +102,7 @@ export function LatestUpdates() {
                       update.image.includes("showcase.jpg") ? "object-[center_58%]" : "object-center"
                     )}
                   />
-                </div>
+                </Link>
 
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="flex justify-between items-start mb-6 font-mono text-xs tracking-widest uppercase text-[var(--color-muted)]">
@@ -111,14 +111,16 @@ export function LatestUpdates() {
                   </div>
                   
                   <h3 className="font-display font-bold text-2xl text-[var(--color-ink)] mb-4">
-                    {update.title}
+                    <Link href={update.link} prefetch={true} className="hover:text-[var(--color-accent-blue)] transition-colors">
+                      {update.title}
+                    </Link>
                   </h3>
                   
                   <p className="font-sans text-[var(--color-muted)] leading-relaxed mb-8 flex-grow">
                     {update.description}
                   </p>
                   
-                  <Link href={update.link} className="inline-flex items-center font-mono text-xs font-bold tracking-widest uppercase text-[var(--color-ink)] group-hover:text-[var(--color-accent-blue)] transition-colors mt-auto border-t border-[var(--color-ink)]/10 pt-6 w-full">
+                  <Link href={update.link} prefetch={true} className="inline-flex items-center font-mono text-xs font-bold tracking-widest uppercase text-[var(--color-ink)] group-hover:text-[var(--color-accent-blue)] transition-colors mt-auto border-t border-[var(--color-ink)]/10 pt-6 w-full">
                     Read More <span className="ml-2">→</span>
                   </Link>
                 </div>

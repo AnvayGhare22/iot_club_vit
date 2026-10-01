@@ -28,6 +28,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     });
 
     lenisRef.current = lenis;
+    (window as unknown as { __lenis: Lenis | null }).__lenis = lenis;
     lenis.on("scroll", ScrollTrigger.update);
 
     const update = (time: number) => {
@@ -41,6 +42,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       gsap.ticker.remove(update);
       lenis.destroy();
       lenisRef.current = null;
+      (window as unknown as { __lenis: Lenis | null }).__lenis = null;
     };
   }, []);
 

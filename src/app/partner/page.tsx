@@ -9,28 +9,35 @@ export default function PartnerPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const formData = new FormData(e.target as HTMLFormElement);
-    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_PARTNER_KEY || "");
-    formData.append("subject", "New Partnership Inquiry from Website");
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    object.access_key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "d0302f54-509a-4b85-8a3b-231d92ede2a7";
+    object.subject = "New Partnership Inquiry - " + (formData.get("organization") || formData.get("name") || "Partner");
+    object.from_name = "IoT Club VIT Pune Website";
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(object),
       });
       
       const data = await response.json();
       if (data.success) {
         setIsSubmitted(true);
       } else {
-        alert("Something went wrong. Please check your configuration or try again later.");
+        alert(data.message || "Something went wrong. Please check your configuration or try again later.");
       }
-    } catch (error) {
-      alert("Error submitting form. Please try again.");
+    } catch {
+      alert("Error submitting form. Please check your network connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
