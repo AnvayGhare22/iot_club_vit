@@ -260,11 +260,8 @@ const blogPosts: Record<string, BlogPost> = {
     readTime: "4 min read",
     image: "/images/updates/resume.jpeg",
     content: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl. Pellentesque euismod, nisl vel ultricies lacinia.",
-      "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.",
-      "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.",
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
+      "The IoT Club of VIT Pune organized a one-hour online resume-building session led by Dheeraj Rathod, aimed at second-year (SY) and third-year (TY) students. The session focused on helping students understand what recruiters look for in a resume and how to structure their academic background, technical skills, projects, and extracurricular activities so that their profile stands out among a large pool of applicants. Particular emphasis was placed on presenting work clearly and concisely, highlighting practical project experience, and tailoring a resume to the role being targeted rather than using a single generic format.",
+      "Beyond resume writing, the session also guided participants on how to approach companies effectively. Students were advised on identifying suitable organizations and opportunities, reaching out professionally, and positioning themselves for internships and early career roles. The interactive format gave attendees the chance to ask questions and gain practical, industry-oriented insights, equipping them with actionable strategies to strengthen their resumes and improve their chances of securing meaningful opportunities.",
     ],
   },
   "first-year-orientation-2024": {
