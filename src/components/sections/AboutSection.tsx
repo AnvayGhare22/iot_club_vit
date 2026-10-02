@@ -34,7 +34,7 @@ export function AboutSection() {
                   The IOT Club at VIT Pune is a student-driven technical community dedicated to fostering innovation in Internet of Things, Artificial Intelligence, Robotics, and Electronics. We empower students to transform ideas into reality through hands-on learning, collaborative projects, and industry exposure.
                 </p>
                 <p>
-                  From workshops on Arduino and Raspberry Pi to national-level events like XEN 4.0, we provide a platform for students to explore emerging technologies, develop technical skills, and connect with industry professionals. Whether you're a beginner or an expert, IOT Club is your gateway to the future of technology.
+                  From workshops on Arduino and Raspberry Pi to national-level events like IoT Genesis, we provide a platform for students to explore emerging technologies, develop technical skills, and connect with industry professionals. Whether you're a beginner or an expert, IOT Club is your gateway to the future of technology.
                 </p>
               </div>
               
