@@ -17,7 +17,7 @@ const currentEvent = {
   organizer: "Organized by IoT Club, VIT Pune",
   date: "9 & 10 October 2026",
   googleFormUrl:
-    "https://docs.google.com/forms/d/e/1FAIpQLSdrTvI6tMZWqQkteMTI9AyIZoFIjYyAIIC2QRF7qTdCxAc9RA/viewform?usp=publish-editor",
+    "https://forms.gle/Le9WofwUjHvaLM4t7",
   whatsappGroupUrl: "https://chat.whatsapp.com/EJDVaeuGSKGBLHhyZgpO3z",
   day1: {
     time: "9 OCTOBER | 3:00 PM – 6:00 PM",
