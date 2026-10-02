@@ -60,7 +60,7 @@ export function UpcomingEventModal({ forceOpen = true }: UpcomingEventModalProps
   if (!isOpen || !mounted) return null;
 
   const googleFormUrl =
-    "https://docs.google.com/forms/d/e/1FAIpQLSdrTvI6tMZWqQkteMTI9AyIZoFIjYyAIIC2QRF7qTdCxAc9RA/viewform?usp=publish-editor";
+    "https://forms.gle/Le9WofwUjHvaLM4t7";
   const whatsappGroupUrl = "https://chat.whatsapp.com/EJDVaeuGSKGBLHhyZgpO3z";
 
   const modalContent = (
