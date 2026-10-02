@@ -132,7 +132,7 @@ export const domainHeads: TeamMember[] = [
     "name": "Chaitanya Pilane",
     "role": "Design Head",
     "domain": "Design Domain",
-    "photo": "/images/team/chaitanya-pilane-new.jpg",
+    "photo": "/images/team/chaitanya-pilane.jpeg",
     "linkedin": "https://www.linkedin.com/in/chaitanya-pilane-04322228a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     "github": "",
     "email": "chaitanyapilane827@gmail.com",
