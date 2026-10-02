@@ -15,7 +15,7 @@ export function HeroSection() {
         <SectionReveal direction="up" delay={0.1}>
           <div className="inline-flex items-center gap-3 px-0 py-1.5 mb-8 border-b-2 border-[var(--color-ink)]">
             <span className="w-2.5 h-2.5 rounded-full bg-[var(--color-brand-gold)] animate-pulse shadow-[0_0_10px_#EBAE38]" />
-            <span className="font-mono text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-ink)]">Internet of Things Club • VIT Pune</span>
+            <span className="font-mono text-xs font-bold tracking-[0.2em] uppercase text-[var(--color-ink)]">IoT Club • VIT Pune</span>
           </div>
         </SectionReveal>
 
